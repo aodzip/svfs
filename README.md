@@ -1,5 +1,3 @@
-# *** This project is not maintained anymore ***
-
 # The Swift Virtual File System
 
 [![Release](https://badge.fury.io/gh/ovh%2Fsvfs.svg)](https://github.com/ovh/svfs/releases)
@@ -42,6 +40,9 @@ Notes :
 - All available mount options are described later in this document.
 
 Credentials can be specified in mount options, however this may be desirable to read them from an external source. The following sections desribe alternative approaches.
+
+Demo :
+mount -t svfs -o auth_url=http://???/v3,username=admin,password=???,tenant=admin,domain=Default,uid=1000,gid=1000 null /home/???/swift
 
 #### Reading credentials from the environment
 
