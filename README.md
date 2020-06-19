@@ -21,6 +21,15 @@ Download and install the latest [release](https://github.com/ovh/svfs/releases) 
 
 ## Usage
 
+#### Build & Install
+
+```
+scripts/build.sh
+cp dist/linux/amd64/svfs /usr/local/bin/
+cp scripts/mount.svfs /sbin/
+chmod +x /sbin/mount.svfs
+```
+
 #### Mount command
 
 On Linux (requires fuse and ruby) :
@@ -42,7 +51,9 @@ Notes :
 Credentials can be specified in mount options, however this may be desirable to read them from an external source. The following sections desribe alternative approaches.
 
 Demo :
+```
 mount -t svfs -o auth_url=http://???/v3,username=admin,password=???,tenant=admin,domain=Default,uid=1000,gid=1000 null /home/???/swift
+```
 
 #### Reading credentials from the environment
 
