@@ -159,6 +159,7 @@ func setFlags() {
 	flags.StringVar(&svfs.SwiftConnection.AuthToken, "os-auth-token", "", "Authentification token")
 	flags.StringVar(&svfs.SwiftConnection.UserName, "os-username", "", "Username")
 	flags.StringVar(&svfs.SwiftConnection.ApiKey, "os-password", "", "User password")
+	flags.StringVar(&svfs.SwiftConnection.Domain, "os-domain-name", "", "Domain name")
 	flags.StringVar(&svfs.SwiftConnection.Region, "os-region-name", "", "Region name")
 	flags.StringVar(&svfs.SwiftConnection.StorageUrl, "os-storage-url", "", "Storage URL")
 	flags.BoolVar(&svfs.SwiftConnection.Internal, "os-internal-endpoint", false, "Use internal storage URL")
@@ -215,6 +216,7 @@ func setFlags() {
 	viper.BindPFlag("os_username", mountCmd.PersistentFlags().Lookup("os-username"))
 	viper.BindPFlag("os_password", mountCmd.PersistentFlags().Lookup("os-password"))
 	viper.BindPFlag("os_tenant_name", mountCmd.PersistentFlags().Lookup("os-tenant-name"))
+	viper.BindPFlag("os_domain_name", mountCmd.PersistentFlags().Lookup("os-domain-name"))
 	viper.BindPFlag("os_region_name", mountCmd.PersistentFlags().Lookup("os-region-name"))
 	viper.BindPFlag("os_auth_token", mountCmd.PersistentFlags().Lookup("os-auth-token"))
 	viper.BindPFlag("os_storage_url", mountCmd.PersistentFlags().Lookup("os-storage-url"))
@@ -293,5 +295,6 @@ func useConfiguration() {
 	svfs.SwiftConnection.Tenant = viper.GetString("os_tenant_name")
 	svfs.SwiftConnection.UserName = viper.GetString("os_username")
 	svfs.SwiftConnection.ApiKey = viper.GetString("os_password")
+	svfs.SwiftConnection.Domain = viper.GetString("os_domain_name")
 	svfs.SwiftConnection.Region = viper.GetString("os_region_name")
 }

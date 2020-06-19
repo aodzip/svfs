@@ -38,6 +38,7 @@ OPTIONS = {
     'profile_ram'       => '--profile-ram',
     'readdir'           => '--readdir-concurrency',
     'readahead_size'    => '--readahead-size',
+    'domain'            => '--os-domain-name',
     'region'            => '--os-region-name',
     'request_timeout'   => '--os-request-timeout',
     'ro'                => '--read-only',
